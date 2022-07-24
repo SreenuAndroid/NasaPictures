@@ -6,16 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.nasapictures.R
 import com.example.nasapictures.databinding.FragmentHomeBinding
+import com.example.nasapictures.ui.MainViewModel
 import com.example.nasapictures.ui.home.adapter.PicturesAdapter
 import com.example.nasapictures.util.PictureDecoration
 
 class HomeFragment : Fragment() {
-    private lateinit var mHomeViewModel: HomeViewModel
+    private lateinit var mMainViewModel: MainViewModel
     private lateinit var mBinding: FragmentHomeBinding
 
     override fun onCreateView(i: LayoutInflater, c: ViewGroup?, b: Bundle?): View {
-        mHomeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        mMainViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
         mBinding = FragmentHomeBinding.inflate(i, c, false)
         return mBinding.root
     }
@@ -23,15 +26,18 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = PicturesAdapter()
+        val adapter = PicturesAdapter { list, position ->
+            mMainViewModel.setPosition(position)
+            findNavController().navigate(R.id.action_navigation_home_to_details, null, null, null)
+        }
         mBinding.rvPictures.addItemDecoration(PictureDecoration(requireContext()))
         mBinding.rvPictures.adapter = adapter
 
-        mHomeViewModel.mPictures.observe(viewLifecycleOwner) {
+        mMainViewModel.mPictures.observe(viewLifecycleOwner) {
             mBinding.progressBar.visibility = View.GONE
             adapter.setPicturesData(it)
         }
 
-        mHomeViewModel.fetchData(view.context.assets)
+        mMainViewModel.fetchData(view.context.assets)
     }
 }

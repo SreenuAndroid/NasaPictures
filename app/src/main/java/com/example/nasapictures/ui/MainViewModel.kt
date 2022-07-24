@@ -1,4 +1,4 @@
-package com.example.nasapictures.ui.home.ui
+package com.example.nasapictures.ui
 
 import android.content.res.AssetManager
 import androidx.lifecycle.MutableLiveData
@@ -13,18 +13,23 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class HomeViewModel : ViewModel() {
+class MainViewModel : ViewModel() {
     val mPictures: MutableLiveData<List<PictureFile>> = MutableLiveData()
+    var mCurrentPosition: Int = 0
 
     fun fetchData(resources: AssetManager) {
         viewModelScope.launch(IO) {
             delay(1000)
             val raw = resources.open("data.json").bufferedReader().use { it.readText() }
             val type = TypeToken.getParameterized(List::class.java, PictureFile::class.java).type
-            val data: List<PictureFile> = Gson().fromJson(raw, type)
+            val data = Gson().fromJson<List<PictureFile>?>(raw, type).sortedBy { it.date }
             withContext(Main) {
                 mPictures.value = data
             }
         }
+    }
+
+    fun setPosition(position: Int) {
+        mCurrentPosition = position
     }
 }
