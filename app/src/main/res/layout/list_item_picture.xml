@@ -27,8 +27,10 @@
                 android:id="@+id/ivPicture"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:scaleType="centerCrop"
                 app:loadImage="@{picture.url}"
+                tools:ignore="UnusedAttribute"
                 tools:srcCompat="@drawable/ic_loading_animated" />
         </androidx.cardview.widget.CardView>
 
