@@ -8,10 +8,11 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NasaPictures/app/src/main/res/layout/fragment_grid.xml" value="0.365625" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NasaPictures/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NasaPictures/app/src/main/res/layout/list_item_picture.xml" value="0.2777777777777778" />
+        <entry key="..\:/Workspace/NasaPictures/app/src/main/res/layout/list_item_picture.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
