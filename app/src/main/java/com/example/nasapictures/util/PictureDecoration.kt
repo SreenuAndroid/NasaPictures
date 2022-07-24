@@ -16,8 +16,11 @@ class PictureDecoration(private var context: Context) : ItemDecoration() {
         super.getItemOffsets(outRect, view, parent, state)
         val itemPosition = parent.getChildAdapterPosition(view)
 
+        if (itemPosition == 0) {
+            outRect.top = context.resources.getDimensionPixelSize(com.intuit.sdp.R.dimen._24sdp)
+        }
         if (itemPosition == 1) {
-            outRect.top = context.resources.getDimensionPixelSize(com.intuit.sdp.R.dimen._50sdp)
+            outRect.top = context.resources.getDimensionPixelSize(com.intuit.sdp.R.dimen._80sdp)
         }
     }
 }
