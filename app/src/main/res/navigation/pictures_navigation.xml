@@ -12,11 +12,21 @@
 
         <action
             android:id="@+id/action_navigation_home_to_details"
-            app:destination="@id/image_details" />
+            app:destination="@id/navigation_image_details" />
     </fragment>
 
     <fragment
-        android:id="@+id/image_details"
+        android:id="@+id/navigation_image_details"
         android:name="com.example.nasapictures.ui.detail.DetailFragment"
+        tools:layout="@layout/fragment_detail">
+
+        <action
+            android:id="@+id/action_navigation_details_to_full_picture"
+            app:destination="@id/navigation_full_picture" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_full_picture"
+        android:name="com.example.nasapictures.ui.fullpicture.FullPictureFragment"
         tools:layout="@layout/fragment_detail" />
 </navigation>

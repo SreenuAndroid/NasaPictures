@@ -31,10 +31,10 @@ class PicturesAdapter : RecyclerView.Adapter<PicturesAdapter.PictureViewHolder>(
         holder.v.executePendingBindings()
         setAnimation(holder.itemView, position)
         holder.itemView.setOnClickListener {
-            val bundle = bundleOf()
-            bundle.putParcelable("picture", holder.v.picture)
             it.findNavController()
-                .navigate(R.id.action_navigation_home_to_details, bundle, null, null)
+                .navigate(R.id.action_navigation_home_to_details, bundleOf().apply {
+                    putParcelable("picture", holder.v.picture)
+                }, null, null)
         }
     }
 

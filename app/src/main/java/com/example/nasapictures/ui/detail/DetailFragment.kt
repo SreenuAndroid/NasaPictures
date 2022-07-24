@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.LinearInterpolator
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import coil.load
 import com.example.nasapictures.R
@@ -27,7 +29,12 @@ class DetailFragment : Fragment() {
         val picture: PictureFile = requireArguments().getParcelable("picture") ?: return
 
         mBinding.ivBack.setOnClickListener { findNavController().popBackStack() }
-        mBinding.ivMaximize.setOnClickListener { findNavController().popBackStack() }
+        mBinding.ivMaximize.setOnClickListener {
+            it.findNavController()
+                .navigate(R.id.action_navigation_details_to_full_picture, bundleOf().apply {
+                    putParcelable("picture", picture)
+                }, null, null)
+        }
 
         mBinding.tvTitle.text = picture.title
         mBinding.tvCopyright.text = picture.copyright
