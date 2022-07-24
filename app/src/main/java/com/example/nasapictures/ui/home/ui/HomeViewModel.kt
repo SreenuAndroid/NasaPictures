@@ -18,7 +18,7 @@ class HomeViewModel : ViewModel() {
 
     fun fetchData(resources: AssetManager) {
         viewModelScope.launch(IO) {
-            delay(3000)
+            delay(1000)
             val raw = resources.open("data.json").bufferedReader().use { it.readText() }
             val type = TypeToken.getParameterized(List::class.java, PictureFile::class.java).type
             val data: List<PictureFile> = Gson().fromJson(raw, type)
