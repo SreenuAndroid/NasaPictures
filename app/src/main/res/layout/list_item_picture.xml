@@ -17,13 +17,20 @@
         android:orientation="vertical"
         android:padding="@dimen/_5sdp">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivPicture"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_230sdp"
-            android:scaleType="centerCrop"
-            app:loadImage="@{picture.url}"
-            tools:srcCompat="@mipmap/ic_launcher" />
+            android:elevation="@dimen/_10sdp"
+            app:cardCornerRadius="@dimen/_8sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPicture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:loadImage="@{picture.url}"
+                tools:srcCompat="@drawable/ic_loading_animated" />
+        </androidx.cardview.widget.CardView>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvTitle"
@@ -34,7 +41,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold"
-            tools:text="leonardo dicaprio" />
+            tools:text="@string/app_name" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvDate"
@@ -45,6 +52,6 @@
             android:text="@{picture.date}"
             android:textColor="@color/white"
             android:textSize="@dimen/_10sdp"
-            tools:text="0" />
+            tools:text="@string/app_name" />
     </LinearLayout>
 </layout>

@@ -24,8 +24,7 @@ data class PictureFile(
             view.load(imageUrl) {
                 crossfade(true)
                 crossfade(500)
-                placeholder(R.mipmap.ic_launcher_round)
-                transformations(RoundedCornersTransformation(20f))
+                placeholder(R.drawable.ic_loading_animated)
             }
         }
     }
