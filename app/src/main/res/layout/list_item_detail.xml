@@ -92,8 +92,8 @@
                 android:id="@+id/tvExplanation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{picture.explanation}"
                 android:scrollbars="vertical"
+                android:text="@{picture.explanation}"
                 tools:text="A professional thief with $40 million in debt and his family's life on the line must commit one final heist - rob a futuristic airborne casino filled with the world's most dangerous criminals." />
         </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
