@@ -5,7 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.nasapictures.R
 import com.example.nasapictures.databinding.ListItemPictureBinding
 import com.example.nasapictures.model.PictureFile
 import kotlin.random.Random
@@ -27,6 +30,12 @@ class PicturesAdapter : RecyclerView.Adapter<PicturesAdapter.PictureViewHolder>(
         holder.v.picture = mPictures[position]
         holder.v.executePendingBindings()
         setAnimation(holder.itemView, position)
+        holder.itemView.setOnClickListener {
+            val bundle = bundleOf()
+            bundle.putParcelable("picture", holder.v.picture)
+            it.findNavController()
+                .navigate(R.id.action_navigation_home_to_details, bundle, null, null)
+        }
     }
 
     override fun getItemCount(): Int = mPictures.size

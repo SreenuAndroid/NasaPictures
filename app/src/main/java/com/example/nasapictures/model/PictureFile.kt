@@ -1,21 +1,27 @@
 package com.example.nasapictures.model
 
+import android.os.Parcelable
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import coil.load
-import coil.transform.RoundedCornersTransformation
 import com.example.nasapictures.R
+import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class PictureFile(
-    val copyright: String,
+    val copyright: String?,
     val date: String,
     val explanation: String,
-    val hdurl: String,
-    val media_type: String,
-    val service_version: String,
+    @SerializedName("hdurl")
+    val hdUrl: String,
+    @SerializedName("media_type")
+    val mediaType: String,
+    @SerializedName("service_version")
+    val serviceVersion: String,
     val title: String,
     val url: String,
-) {
+) : Parcelable {
     companion object {
         @JvmStatic
         @BindingAdapter("app:loadImage")
