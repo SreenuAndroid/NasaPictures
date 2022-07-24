@@ -1,5 +1,7 @@
 package com.example.nasapictures.ui.home.adapter
 
+import android.annotation.SuppressLint
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +19,7 @@ class PicturesAdapter : RecyclerView.Adapter<PicturesAdapter.PictureViewHolder>(
     private var mPictures: List<PictureFile> = mutableListOf()
     private var mLastPosition = -1
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setPicturesData(pictures: List<PictureFile>) {
         this.mPictures = pictures
         notifyDataSetChanged()
@@ -33,7 +36,8 @@ class PicturesAdapter : RecyclerView.Adapter<PicturesAdapter.PictureViewHolder>(
         holder.itemView.setOnClickListener {
             it.findNavController()
                 .navigate(R.id.action_navigation_home_to_details, bundleOf().apply {
-                    putParcelable("picture", holder.v.picture)
+                    putParcelableArrayList("pictures_list", mPictures as ArrayList<out Parcelable>)
+                    putInt("position", position)
                 }, null, null)
         }
     }

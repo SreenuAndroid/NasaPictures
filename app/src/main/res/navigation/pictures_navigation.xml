@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/navigation_image_details"
-        android:name="com.example.nasapictures.ui.detail.DetailFragment"
+        android:name="com.example.nasapictures.ui.detail.ui.DetailFragment"
         tools:layout="@layout/fragment_detail">
 
         <action

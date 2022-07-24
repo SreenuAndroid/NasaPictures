@@ -12,8 +12,12 @@
         <entry key="..\:/Workspace/NasaPictures/app/src/main/res/drawable/ic_fullscreen_white.xml" value="0.2525" />
         <entry key="..\:/Workspace/NasaPictures/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/Workspace/NasaPictures/app/src/main/res/layout/fragment_detail.xml" value="0.3625" />
+        <entry key="..\:/Workspace/NasaPictures/app/src/main/res/layout/fragment_detail_pager.xml" value="0.3625" />
+        <entry key="..\:/Workspace/NasaPictures/app/src/main/res/layout/fragment_details_pager.xml" value="0.3625" />
+        <entry key="..\:/Workspace/NasaPictures/app/src/main/res/layout/fragment_full_picture.xml" value="0.3625" />
         <entry key="..\:/Workspace/NasaPictures/app/src/main/res/layout/fragment_fullscreen_image.xml" value="0.3625" />
         <entry key="..\:/Workspace/NasaPictures/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
+        <entry key="..\:/Workspace/NasaPictures/app/src/main/res/layout/list_item_detail.xml" value="0.3625" />
         <entry key="..\:/Workspace/NasaPictures/app/src/main/res/layout/list_item_overview.xml" value="0.3625" />
         <entry key="..\:/Workspace/NasaPictures/app/src/main/res/layout/list_item_picture.xml" value="0.358695652173913" />
       </map>
