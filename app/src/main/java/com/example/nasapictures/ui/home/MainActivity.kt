@@ -3,11 +3,13 @@ package com.example.nasapictures.ui.home
 import android.os.Build
 import android.os.Bundle
 import android.widget.FrameLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.nasapictures.R
+import com.example.nasapictures.util.Connectivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +28,15 @@ class MainActivity : AppCompatActivity() {
                     rightMargin = insets.right
                 }
                 WindowInsetsCompat.CONSUMED
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Connectivity.check {
+            if (!it) {
+                Toast.makeText(this, R.string.msg_internet, Toast.LENGTH_LONG).show()
             }
         }
     }

@@ -23,6 +23,16 @@
             android:elevation="@dimen/_10sdp"
             app:cardCornerRadius="@dimen/_8sdp">
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivNoInternet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleType="center"
+                android:src="@drawable/ic_baseline_wifi_off_white"
+                tools:ignore="UnusedAttribute"
+                tools:srcCompat="@drawable/ic_loading_animated" />
+
             <com.flaviofaria.kenburnsview.KenBurnsView
                 android:id="@+id/ivPicture"
                 android:layout_width="match_parent"

@@ -1,10 +1,12 @@
 package com.example.nasapictures.ui.home.detail.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nasapictures.databinding.ListItemDetailBinding
 import com.example.nasapictures.model.PictureFile
+import com.example.nasapictures.util.Connectivity
 
 class DetailsPagerAdapter(
     private val mPictures: List<PictureFile>,
@@ -26,6 +28,12 @@ class DetailsPagerAdapter(
         holder.v.executePendingBindings()
         holder.itemView.setOnClickListener {
             mClickListener.invoke(holder.v.picture!!, position)
+        }
+        Connectivity.check {
+            when {
+                it -> holder.v.ivNoInternet.visibility = View.GONE
+                else -> holder.v.ivNoInternet.visibility = View.VISIBLE
+            }
         }
     }
 

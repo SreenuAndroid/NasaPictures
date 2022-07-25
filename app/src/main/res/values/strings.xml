@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Nasa Pictures</string>
+    <string name="msg_internet">No active internet connection</string>
+    <string name="dismiss">Dismiss</string>
 </resources>

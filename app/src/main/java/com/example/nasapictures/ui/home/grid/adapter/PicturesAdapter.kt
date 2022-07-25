@@ -9,6 +9,7 @@ import android.view.animation.ScaleAnimation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nasapictures.databinding.ListItemPictureBinding
 import com.example.nasapictures.model.PictureFile
+import com.example.nasapictures.util.Connectivity
 import kotlin.random.Random
 
 class PicturesAdapter(private val mClickListener: (List<PictureFile>, Int) -> Unit) :
@@ -32,6 +33,12 @@ class PicturesAdapter(private val mClickListener: (List<PictureFile>, Int) -> Un
         setAnimation(holder.itemView, position)
         holder.itemView.setOnClickListener {
             mClickListener.invoke(mPictures, position)
+        }
+        Connectivity.check {
+            when {
+                it -> holder.v.ivNoInternet.visibility = View.GONE
+                else -> holder.v.ivNoInternet.visibility = View.VISIBLE
+            }
         }
     }
 

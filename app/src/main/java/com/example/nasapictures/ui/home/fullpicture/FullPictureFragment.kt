@@ -10,6 +10,7 @@ import coil.load
 import com.example.nasapictures.R
 import com.example.nasapictures.databinding.FragmentFullPictureBinding
 import com.example.nasapictures.model.PictureFile
+import com.example.nasapictures.util.Connectivity
 
 class FullPictureFragment : Fragment() {
     private lateinit var mBinding: FragmentFullPictureBinding
@@ -28,6 +29,12 @@ class FullPictureFragment : Fragment() {
 
         mBinding.ivPictureFull.load(picture.hdUrl) {
             placeholder(R.drawable.ic_loading_animated)
+        }
+        Connectivity.check {
+            when {
+                it -> mBinding.ivNoInternet.visibility = View.GONE
+                else -> mBinding.ivNoInternet.visibility = View.VISIBLE
+            }
         }
     }
 }
