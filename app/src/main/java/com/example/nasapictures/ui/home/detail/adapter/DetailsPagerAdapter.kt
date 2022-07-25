@@ -1,4 +1,4 @@
-package com.example.nasapictures.ui.detail.adapter
+package com.example.nasapictures.ui.home.detail.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

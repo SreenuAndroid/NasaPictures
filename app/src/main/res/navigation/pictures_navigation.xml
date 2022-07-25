@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.nasapictures.ui.home.ui.HomeFragment"
+        android:name="com.example.nasapictures.ui.home.grid.ui.GridFragment"
         tools:layout="@layout/fragment_home">
 
         <action
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/navigation_image_details"
-        android:name="com.example.nasapictures.ui.detail.ui.DetailFragment"
+        android:name="com.example.nasapictures.ui.home.detail.ui.DetailFragment"
         tools:layout="@layout/fragment_detail">
 
         <action
@@ -35,6 +35,6 @@
 
     <fragment
         android:id="@+id/navigation_full_picture"
-        android:name="com.example.nasapictures.ui.fullpicture.FullPictureFragment"
+        android:name="com.example.nasapictures.ui.home.fullpicture.FullPictureFragment"
         tools:layout="@layout/fragment_detail" />
 </navigation>

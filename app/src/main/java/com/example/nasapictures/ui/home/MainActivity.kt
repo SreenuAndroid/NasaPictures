@@ -1,4 +1,4 @@
-package com.example.nasapictures.ui
+package com.example.nasapictures.ui.home
 
 import android.os.Build
 import android.os.Bundle

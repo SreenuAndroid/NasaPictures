@@ -1,4 +1,4 @@
-package com.example.nasapictures.ui
+package com.example.nasapictures.ui.home
 
 import android.content.res.AssetManager
 import androidx.lifecycle.MutableLiveData

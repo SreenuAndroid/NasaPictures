@@ -1,4 +1,4 @@
-package com.example.nasapictures.ui.detail.ui
+package com.example.nasapictures.ui.home.detail.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,8 +11,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.nasapictures.R
 import com.example.nasapictures.databinding.FragmentDetailBinding
 import com.example.nasapictures.model.PictureFile
-import com.example.nasapictures.ui.MainViewModel
-import com.example.nasapictures.ui.detail.adapter.DetailsPagerAdapter
+import com.example.nasapictures.ui.home.MainViewModel
+import com.example.nasapictures.ui.home.detail.adapter.DetailsPagerAdapter
 
 class DetailFragment : Fragment() {
     private lateinit var mMainViewModel: MainViewModel

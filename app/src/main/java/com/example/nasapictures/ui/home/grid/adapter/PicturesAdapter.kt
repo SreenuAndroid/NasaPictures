@@ -1,4 +1,4 @@
-package com.example.nasapictures.ui.home.adapter
+package com.example.nasapictures.ui.home.grid.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package com.example.nasapictures.ui.fullpicture
+package com.example.nasapictures.ui.home.fullpicture
 
 import android.os.Bundle
 import android.view.LayoutInflater

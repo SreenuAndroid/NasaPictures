@@ -1,4 +1,4 @@
-package com.example.nasapictures.ui.home.ui
+package com.example.nasapictures.ui.home.grid.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,11 +9,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.nasapictures.R
 import com.example.nasapictures.databinding.FragmentHomeBinding
-import com.example.nasapictures.ui.MainViewModel
-import com.example.nasapictures.ui.home.adapter.PicturesAdapter
+import com.example.nasapictures.ui.home.MainViewModel
+import com.example.nasapictures.ui.home.grid.adapter.PicturesAdapter
 import com.example.nasapictures.util.PictureDecoration
 
-class HomeFragment : Fragment() {
+class GridFragment : Fragment() {
     private lateinit var mMainViewModel: MainViewModel
     private lateinit var mBinding: FragmentHomeBinding
 
