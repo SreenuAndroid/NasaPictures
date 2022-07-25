@@ -19,7 +19,6 @@ class MainViewModel : ViewModel() {
 
     fun fetchData(resources: AssetManager) {
         viewModelScope.launch(IO) {
-            delay(1000)
             val raw = resources.open("data.json").bufferedReader().use { it.readText() }
             val type = TypeToken.getParameterized(List::class.java, PictureFile::class.java).type
             val data = Gson().fromJson<List<PictureFile>?>(raw, type).sortedBy { it.date }
