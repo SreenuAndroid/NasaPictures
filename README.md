@@ -1,8 +1,8 @@
 # NasaPictures
 Nasa Pictures App
 
-- A Splash Screen
 - A Home Screen
+  - Splash Screen by API 
   - A fragment with images loaded in a RecyclerView with Staggered Grid
   - A fragment to show the details on an image clicked in the grid
     1. Swiping through the images
